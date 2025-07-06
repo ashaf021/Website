@@ -1,0 +1,239 @@
+* {
+  margin: 0;                 /* Remove default margin */
+  padding: 0;                /* Remove default padding */
+  box-sizing: border-box;    /* Include padding and border in element's total width and height */
+}
+
+/* Set base font and background for the whole page */
+body {
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif; /* Use Proxima Nova, fallback to Montserrat, Arial, sans-serif */
+  color: #1a1a1a;                      /* Set default text color */
+  background-color: #fff;           /* Set background color to white */
+}
+
+/* Navigation bar styles */
+.navbar {
+  display: flex;                    /* Use flexbox for layout */
+  justify-content: space-between;   /* Space out logo and nav links */
+  align-items: center;              /* Vertically center items */
+  padding: 20px 40px;               /* Padding: 20px top/bottom, 40px left/right */
+  background-color: #fff;           /* White background */
+  border-bottom: 1px solid #eee;    /* Light gray bottom border */
+}
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  position: relative; /* Required for pseudo-element underline */
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #FFC907; /* Yellow underline */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+/* Logo styles */
+.logo {
+  display: flex;                    /* Flex layout for logo and text */
+  align-items: center;              /* Vertically center logo and text */
+  gap: 2px;                        /* Space between logo and text */
+  font-weight: bold;                /* Bold text */
+  font-size: 1.2rem;                /* Slightly larger text */
+  flex: 1;                          /* Take equal space as nav-links */
+}
+
+/* Navigation links container styles */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;   /* Align links to the right */
+  flex: 1;
+  gap: 100px;                   /* 70px space between each link */
+}
+
+/* Navigation links styles */
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin: 0;                   /* Remove any margin */
+}
+
+/* Remove margin from the first link */
+.nav-links a:first-child {
+  margin-left: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;               /* For absolutely positioned children */
+  width: 100vw;                     /* Full viewport width */
+  min-height: 600px;                /* Increased height */
+  display: flex;                    /* Flexbox layout */
+  align-items: center;              /* Vertically center content */
+  justify-content: flex-start;      /* Align content to the left */
+  overflow: hidden;                 /* Hide overflow */
+  box-sizing: border-box;           /* Include padding/border in width/height */
+  padding: 50px;                    /* Padding on all sides */
+}
+
+/* Hero background image styles */
+.hero-bg {
+  position: absolute;               /* Position relative to .hero */
+  top: 0;                           /* Align to top */
+  left: 0;                          /* Align to left */
+  width: 100vw;                     /* Full viewport width */
+  height: 100%;                     /* Full height of .hero */
+  object-fit: cover;                /* Cover the area without distortion */
+  z-index: 1;                       /* Place behind text */
+  filter: brightness(0.6);          /* Darken image for readability */
+}
+
+/* Hero text styles */
+.hero-text {
+  position: relative;               /* Position above background */
+  z-index: 2;                       /* Place above background image */
+  color: #fff;                      /* White text */
+  text-align: left;                 /* Left-align text */
+  width: 100%;                      /* Full width */
+  max-width: 700px;                 /* Limit max width */
+  margin: 0 0 0 30px;               /* Left margin for spacing */
+  align-items: flex-start;           /* Align items to start (for flex children) */
+}
+
+/* Hero heading styles */
+.hero-text h1 {
+  font-size: 3rem;                  /* Large heading */
+  margin-bottom: 20px;              /* Space below heading */
+}
+
+/* Hero paragraph styles */
+.hero-text p {
+  font-size: 1.1rem;                /* Slightly larger text */
+  margin-bottom: 30px;              /* Space below paragraph */
+}
+
+/* Call-to-action box styles */
+.cta-box {
+  background-color: #fff;           /* White background */
+  color: #993300;                   /* Brown text */
+  padding: 15px 30px;               /* Padding inside box */
+  border-radius: 10px;              /* Rounded corners */
+  display: flex;                    /* Arrange children in a row */
+  align-items: center;              /* Vertically center items */
+  font-weight: 600;                 /* Semi-bold text */
+  max-width: 420px;                 /* Increase width for row layout */
+  gap: 50px;                        /* Space between text and button */
+}
+
+/* Donate button styles */
+.donate-btn {
+  display: inline-block;            /* Shrink to fit content */
+  margin-top: 0;                    /* Remove top margin for row layout */
+  background-color: #FFC907;        /* Yellow background */
+  color: #003366;                   /* Dark blue text */
+  padding: 15px 24px;               /* Padding inside button */
+  border-radius: 8px;               /* Rounded corners */
+  text-decoration: none;            /* Remove underline */
+  font-weight: bold;                /* Bold text */
+}
+
+/* Donate button hover styles */
+.donate-btn:hover {
+  background-color: #cc9a06; /* A darker shade of yellow */
+  color: #fff;               /* Change text to white for contrast */
+  cursor: pointer;           /* Show pointer cursor on hover */
+}
+
+/* Optional: Hero image styles (if used elsewhere) */
+.hero-image img {
+  width: 60%;                      /* Full width */
+  max-width: 500px;                 /* Limit max width */
+  height: auto;                     /* Keep aspect ratio */
+  border-radius: 10px;              /* Rounded corners */
+}
+
+/* Banner Section */
+.banner {
+  width: 100vw;
+  background-color: #FFF7E1;
+  padding: 45px 0;
+  text-align: center;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  color: #003366;
+  font-weight: 500;
+  margin: 0;
+  flex-shrink: 0;           /* Prevent shrinking */
+  /* Remove flex-grow: 1; unless you want banner to fill ALL empty space */
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    padding: 16px 10px;
+  }
+  .logo {
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .nav-links {
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+  .hero {
+    min-height: 350px;
+    padding: 20px 0;
+  }
+  .hero-text {
+    margin: 0 20px;
+    max-width: 100%;
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 5px;
+  }
+  .logo {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  .nav-links {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero {
+    min-height: 220px;
+    padding: 10px 0;
+  }
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .cta-box {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    padding: 10px;
+  }
+  .banner {
+    font-size: 1rem;
+    padding: 20px 0;
+  }
+}
